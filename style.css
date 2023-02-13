@@ -38,3 +38,9 @@ footer{
     align-items: center;
     flex-wrap: wrap;
 }
+.img-card{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
