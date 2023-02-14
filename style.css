@@ -43,4 +43,5 @@ footer{
     height: 250px;
     object-fit: cover;
     object-position: center;
+    margin: 8px;
 }

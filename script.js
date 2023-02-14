@@ -51,5 +51,11 @@ let allImgs = [
 ]
 
 function render(){
-    
+    for (let i = 0; i < allImgs.length; i++) {
+        const img = allImgs[i];
+        
+        document.getElementById('img-gallery').innerHTML += /*html*/`
+            <img class="img-card" src="${img}">
+        `;
+    }
 }
