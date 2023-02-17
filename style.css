@@ -69,7 +69,15 @@ footer{
     z-index: 5;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+}
+.close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 8px;
+}
+.close img{
+    width: 40px;
 }
 .overlay a{
     position: absolute;
@@ -84,7 +92,6 @@ footer{
     z-index: 999;
     border-radius: 100%;
     padding: 8px;
-    margin: 0 16px 0 16px;
 }
 .overlay a:hover{
     background-color: #323439;
