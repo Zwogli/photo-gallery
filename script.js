@@ -83,8 +83,8 @@ function randomImgs(){
 
         slideImgs.push(allImgs[randomImg]);
         saveSlideshow();
-        // generateRandomSlideshow();
     }
+    generateRandomSlideshow();
 }
 
 function saveSlideshow(){
@@ -101,10 +101,13 @@ function loadSlideshow(){
 }
 
 function generateRandomSlideshow(){
-    // let slide = document.getElementById('slide');
-
-    // slide.innerHTML += /*html*/`
-    //     <img class="slideshow-imgs" src="${allImgs[i]}"> 
-    // `;
+    for (let i = 0; i < slideImgs.length; i++) {
+        let slideImg = slideImgs[i];
+        let slide = document.getElementById('slide');
+        
+    slide.innerHTML += /*html*/`
+        <img class="slideshow-imgs" src="${slideImg}"> 
+    `;
+    }
 }
 
