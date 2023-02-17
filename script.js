@@ -88,18 +88,24 @@ function closeZoom(){
     zoomOverlay.classList.remove('d-flex');
 }
 
-function loadZoom(nextImage){
-    aktivImg
-
+function loadZoom(){
     document.getElementById('zoom').innerHTML = /*html*/`
         <img class="zoom-img" src="${allImgs[aktivImg]}">
     `;
 }
 
-function zoomNext(i){
-    let nextImage = aktivImg + i;
-    let newImg = aktivImg + nextImage;
-
+function zoomNext(nextImg){
+    let newImg = aktivImg + nextImg;
+    
+    if(newImg < 0){
+        newImg = allImgs.length -1;
+    }
+    if(newImg > allImgs.length -1){
+        newImg = 0
+    }
+    globalThis.aktivImg = newImg;
+    
+    document.getElementById('zoom').innerHTML = ``;
     document.getElementById('zoom').innerHTML = /*html*/`
         <img class="zoom-img" src="${allImgs[newImg]}">
     `;
