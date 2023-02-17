@@ -12,18 +12,18 @@ let allImgs = [
 `img/IMG_20220901_135335.jpg`,
 `img/IMG_20220901_205450.jpg`,
 `img/IMG_20220906_145043.jpg`,
-`img/IMG_20220906_150703.jpg`,
-`img/IMG_20220916_003840.jpg`,
-`img/IMG_20220918_113804.jpg`,
-`img/IMG_20220918_113920.jpg`,
-`img/IMG_20220919_174736.jpg`,
-`img/IMG_20220919_182509.jpg`,
-`img/IMG_20220919_182516.jpg`,
-`img/IMG_20220920_102332.jpg`,
-`img/IMG_20220920_113628.jpg`,
-`img/IMG_20220920_113647.jpg`,
-`img/IMG_20220920_113700.jpg`,
-`img/IMG_20220920_113740.jpg`,
+// `img/IMG_20220906_150703.jpg`,
+// `img/IMG_20220916_003840.jpg`,
+// `img/IMG_20220918_113804.jpg`,
+// `img/IMG_20220918_113920.jpg`,
+// `img/IMG_20220919_174736.jpg`,
+// `img/IMG_20220919_182509.jpg`,
+// `img/IMG_20220919_182516.jpg`,
+// `img/IMG_20220920_102332.jpg`,
+// `img/IMG_20220920_113628.jpg`,
+// `img/IMG_20220920_113647.jpg`,
+// `img/IMG_20220920_113700.jpg`,
+// `img/IMG_20220920_113740.jpg`,
 `img/IMG_20220920_113810.jpg`,
 `img/IMG_20220921_164129.jpg`,
 `img/IMG_20220922_081816.jpg`,
@@ -38,8 +38,6 @@ let allImgs = [
 `img/IMG_20230120_135523.jpg`,
 `img/IMG_20230212_131531.jpg`
 ]
-let slideImgs = [];
-loadSlideshow();
 
 function render(){
     splitArrayImgs();
@@ -76,7 +74,7 @@ function zoom(){
     document.getElementById('body').innerHTML =/*html*/`
         <div class="overlay">
             <div class="zoom-img">
-                
+
             </div>
         </div>
     `;

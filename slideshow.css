@@ -1,0 +1,68 @@
+/*<<<<<<<<<<<<<<< Slideshow */
+#gallery-carusell{
+    height: 50vh;
+    background-color: var(--color-one-bright);
+    padding: 40px 15%;
+}
+.slideshow{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 5px;
+}
+/*<<<<<<<<<<<<<< Arrows */
+.slideshow a {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #32343950;
+}
+.arrow-left{
+    position: absolute;
+    left: 0;
+}
+.arrow-right{
+    position: absolute;
+    right: 0;
+}
+/*<<<<<<<<<<<< Indikator */
+#indikatorlist{
+    /* background-color: black; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+}
+#indikatorlist li{
+    height: 100%;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.indikator-list{
+    font-size: 50px;
+    color: var(--color-two);
+}
+/*<<<<<<<<< Slideshow Imgs */
+.slideshow-imgs{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}

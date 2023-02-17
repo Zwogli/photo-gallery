@@ -1,3 +1,6 @@
+let slideImgs = [];
+loadSlideshow();
+
 function randomImgs(){
     slideImgs.splice(slideImgs);
     for (let pics = 0; pics < 5; pics++) {
