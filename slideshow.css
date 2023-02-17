@@ -30,6 +30,9 @@
     position: absolute;
     right: 0;
 }
+.arrow{
+    width: 100%;
+}
 /*<<<<<<<<<<<< Indikator */
 #indikatorlist{
     /* background-color: black; */
