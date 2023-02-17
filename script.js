@@ -63,7 +63,7 @@ function renderSectionOne(splitImgs){
     for (let i = 0; i < allImgs.length -splitImgs; i++) {
         const firstPartImg = allImgs[i];
         
-        document.getElementById('img-gallery').innerHTML += /*html*/`
+        document.getElementById('galleryOne').innerHTML += /*html*/`
         <img class="img-card" src="${firstPartImg}">
         `;
     }
@@ -71,10 +71,10 @@ function renderSectionOne(splitImgs){
 
 function renderSectionTwo(splitImgs){
     for (let i = allImgs.length -splitImgs; i < allImgs.length; i++) {
-        const firstPartImg = allImgs[i];
+        const secondPartImg = allImgs[i];
         
-        document.getElementById('img-gallery').innerHTML += /*html*/`
-        <img class="img-card" src="${firstPartImg}">
+        document.getElementById('galleryTwo').innerHTML += /*html*/`
+        <img class="img-card" src="${secondPartImg}">
         `;
     }
 }
