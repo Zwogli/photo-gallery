@@ -39,21 +39,12 @@ let allImgs = [
 `img/IMG_20230212_131531.jpg`
 ]
 
-// function render(){
-//     for (let i = 0; i < allImgs.length; i++) {
-//         const img = allImgs[i];
-        
-//         document.getElementById('img-gallery').innerHTML += /*html*/`
-//             <img class="img-card" src="${img}">
-//         `;
-//     }
-// }
-
 function render(){
-    splitImgs();
+    splitArrayImgs();
+    randomImgs();
 }
 
-function splitImgs(){
+function splitArrayImgs(){
     let splitImgs = Math.floor(allImgs.length / 2);
         renderSectionOne(splitImgs);
         renderSectionTwo(splitImgs);
@@ -77,4 +68,24 @@ function renderSectionTwo(splitImgs){
         <img class="img-card" src="${secondPartImg}">
         `;
     }
+}
+
+//<<<<<<<<<<< Slideshow
+function randomImgs(){
+    for (let pics = 0; pics < 5; pics++) {
+        let pic = pics;
+
+        let i = allImgs.length;
+        let randomImg = Math.floor(Math.random() * i);
+
+        generateRandomSlideshow(randomImg);
+    }
+}
+
+function generateRandomSlideshow(i){
+    let slide = document.getElementById('slide');
+
+    slide.innerHTML += /*html*/`
+        <img class="slideshow-imgs" src="${allImgs[i]}"> 
+    `;
 }
