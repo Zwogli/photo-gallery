@@ -38,6 +38,7 @@ let allImgs = [
 `img/IMG_20230120_135523.jpg`,
 `img/IMG_20230212_131531.jpg`
 ]
+var aktivImg;
 
 function render(){
     splitArrayImgs();
@@ -70,13 +71,14 @@ function renderSectionTwo(splitImgs){
     }
 }
 
+// Zoom & Carusell
 function openZoom(i){
     let zoomOverlay = document.getElementById('zoom-overlay');
-    let aktivImg = allImgs[i];
 
     zoomOverlay.classList.remove('d-none');
     zoomOverlay.classList.add('d-flex');
-    loadZoom(aktivImg);
+    globalThis.aktivImg = i
+    loadZoom();
 }
 
 function closeZoom(){
@@ -86,8 +88,19 @@ function closeZoom(){
     zoomOverlay.classList.remove('d-flex');
 }
 
-function loadZoom(aktivImg){
+function loadZoom(nextImage){
+    aktivImg
+
     document.getElementById('zoom').innerHTML = /*html*/`
-        <img class="zoom-img" src="${aktivImg}">
+        <img class="zoom-img" src="${allImgs[aktivImg]}">
+    `;
+}
+
+function zoomNext(i){
+    let nextImage = aktivImg + i;
+    let newImg = aktivImg + nextImage;
+
+    document.getElementById('zoom').innerHTML = /*html*/`
+        <img class="zoom-img" src="${allImgs[newImg]}">
     `;
 }

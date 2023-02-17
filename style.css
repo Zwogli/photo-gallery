@@ -69,18 +69,28 @@ footer{
     z-index: 5;
     justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 .overlay a{
-    height: 80%;
-    width: 10%;
+    min-height: 32px;
+    min-width: 32px;
+    height: 64px;
+    width: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 10;
+    border-radius: 100%;
+    padding: 8px;
+    margin: 0 16px 0 16px;
+}
+.overlay a:hover{
+    background-color: #323439;
 }
 .zoom-arrow{
     min-width: 32px;
-    max-width: 65px;
+    max-width: 64px;
     width: 100%;
     padding: 0 16px 0 16px;
 }
@@ -93,5 +103,6 @@ footer{
 .zoom-img{
     object-fit: cover;
     width: 100%;
+    max-height: 80vh;
     border-radius: 5px;
 }
