@@ -39,12 +39,42 @@ let allImgs = [
 `img/IMG_20230212_131531.jpg`
 ]
 
+// function render(){
+//     for (let i = 0; i < allImgs.length; i++) {
+//         const img = allImgs[i];
+        
+//         document.getElementById('img-gallery').innerHTML += /*html*/`
+//             <img class="img-card" src="${img}">
+//         `;
+//     }
+// }
+
 function render(){
-    for (let i = 0; i < allImgs.length; i++) {
-        const img = allImgs[i];
+    splitImgs();
+}
+
+function splitImgs(){
+    let splitImgs = Math.floor(allImgs.length / 2);
+        renderSectionOne(splitImgs);
+        renderSectionTwo(splitImgs);
+}
+
+function renderSectionOne(splitImgs){
+    for (let i = 0; i < allImgs.length -splitImgs; i++) {
+        const firstPartImg = allImgs[i];
         
         document.getElementById('img-gallery').innerHTML += /*html*/`
-            <img class="img-card" src="${img}">
+        <img class="img-card" src="${firstPartImg}">
+        `;
+    }
+}
+
+function renderSectionTwo(splitImgs){
+    for (let i = allImgs.length -splitImgs; i < allImgs.length; i++) {
+        const firstPartImg = allImgs[i];
+        
+        document.getElementById('img-gallery').innerHTML += /*html*/`
+        <img class="img-card" src="${firstPartImg}">
         `;
     }
 }
