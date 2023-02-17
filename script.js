@@ -38,6 +38,8 @@ let allImgs = [
 `img/IMG_20230120_135523.jpg`,
 `img/IMG_20230212_131531.jpg`
 ]
+let slideImgs = [];
+loadSlideshow();
 
 function render(){
     splitArrayImgs();
@@ -72,20 +74,37 @@ function renderSectionTwo(splitImgs){
 
 //<<<<<<<<<<< Slideshow
 function randomImgs(){
+    slideImgs.splice(slideImgs);
     for (let pics = 0; pics < 5; pics++) {
         let pic = pics;
 
         let i = allImgs.length;
         let randomImg = Math.floor(Math.random() * i);
 
-        generateRandomSlideshow(randomImg);
+        slideImgs.push(allImgs[randomImg]);
+        saveSlideshow();
+        // generateRandomSlideshow();
     }
 }
 
-function generateRandomSlideshow(i){
-    let slide = document.getElementById('slide');
+function saveSlideshow(){
+    let saveSlideshow = JSON.stringify(slideImgs);
 
-    slide.innerHTML += /*html*/`
-        <img class="slideshow-imgs" src="${allImgs[i]}"> 
-    `;
+    localStorage.setItem('Slideshow', saveSlideshow);
 }
+function loadSlideshow(){
+    let saveSlideshow = localStorage.getItem('Slideshow');
+
+    if (saveSlideshow) {
+        slideImgs = JSON.parse(saveSlideshow); 
+    }
+}
+
+function generateRandomSlideshow(){
+    // let slide = document.getElementById('slide');
+
+    // slide.innerHTML += /*html*/`
+    //     <img class="slideshow-imgs" src="${allImgs[i]}"> 
+    // `;
+}
+
