@@ -67,7 +67,17 @@ function renderSectionTwo(splitImgs){
         const secondPartImg = allImgs[i];
         
         document.getElementById('galleryTwo').innerHTML += /*html*/`
-        <img class="img-card" src="${secondPartImg}">
+        <img onclick="zoom()" class="img-card" src="${secondPartImg}">
         `;
     }
+}
+
+function zoom(){
+    document.getElementById('body').innerHTML =/*html*/`
+        <div class="overlay">
+            <div class="zoom-img">
+                
+            </div>
+        </div>
+    `;
 }
