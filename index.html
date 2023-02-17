@@ -13,7 +13,7 @@
     <script src="script.js"></script>
     <script src="slideshow.js"></script>
 </head>
-<body onload="render()" id="body">
+<body onload="render()">
     
     <header>
         <h1>Fotogallerie</h1>
@@ -21,15 +21,23 @@
     <main>
         <section id="galleryOne" class="gallery-card"></section>
 
+        <section onclick="closeZoom()" id="zoom-overlay" class="overlay d-none">
+            <div class="zoom-center">
+                <div class="zoom-img">
+
+                </div>
+            </div>
+        </section>
+
         <section id="gallery-carusell">
             <div id="slide" class="slideshow">
                 <a onclick="umschalten(-1)" class="arrow-left" href="#">
                     <div class="blur">
-                        <img src="img/icon/arrow-left.png">
+                        <img class="arrow" src="img/icon/arrow-left.png">
                     </div>
                 </a>
                 <a onclick="umschalten(1)" class="arrow-right" href="#">
-                    <img src="img/icon/arrow-right.png">
+                    <img class="arrow" src="img/icon/arrow-right.png">
                 </a>
                 <ol id="indikatorlist">
                     <li class="indikator-list">&cir;</li>

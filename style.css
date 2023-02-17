@@ -12,6 +12,9 @@
 body{
     background-color: var(--color-one);
 }
+.d-none{
+    display: none;
+}
 /*<<<<<<<< Content */
 header{
     height: calc(100px - 32px - 1px);
@@ -54,5 +57,25 @@ footer{
 }
 /*<<<<<<<<<<<<<<< Zoom */
 .overlay{
-    background-color: #202124aa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #202124e7;
+    z-index: 5;
+}
+.zoom-center{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.zoom-img{
+    background-color: white;
+    border-radius: 5px;
+    height: 80vh;
+    width: 80vh;
+    z-index: 15;
 }

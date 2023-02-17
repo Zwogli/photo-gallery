@@ -55,7 +55,7 @@ function renderSectionOne(splitImgs){
         const firstPartImg = allImgs[i];
         
         document.getElementById('galleryOne').innerHTML += /*html*/`
-        <img class="img-card" src="${firstPartImg}">
+        <img onclick="openZoom()" class="img-card" src="${firstPartImg}">
         `;
     }
 }
@@ -65,17 +65,15 @@ function renderSectionTwo(splitImgs){
         const secondPartImg = allImgs[i];
         
         document.getElementById('galleryTwo').innerHTML += /*html*/`
-        <img onclick="zoom()" class="img-card" src="${secondPartImg}">
+        <img  class="img-card" src="${secondPartImg}">
         `;
     }
 }
 
-function zoom(){
-    document.getElementById('body').innerHTML =/*html*/`
-        <div class="overlay">
-            <div class="zoom-img">
+function openZoom(){
+    document.getElementById('zoom-overlay').classList.remove('d-none');
+}
 
-            </div>
-        </div>
-    `;
+function closeZoom(){
+    document.getElementById('zoom-overlay').classList.add('d-none');
 }
