@@ -71,13 +71,19 @@ function renderSectionTwo(splitImgs){
 }
 
 function openZoom(i){
-    let aktivImg = allImgs[i]
-    document.getElementById('zoom-overlay').classList.remove('d-none');
+    let zoomOverlay = document.getElementById('zoom-overlay');
+    let aktivImg = allImgs[i];
+
+    zoomOverlay.classList.remove('d-none');
+    zoomOverlay.classList.add('d-flex');
     loadZoom(aktivImg);
 }
 
 function closeZoom(){
-    document.getElementById('zoom-overlay').classList.add('d-none');
+    let zoomOverlay = document.getElementById('zoom-overlay');
+
+    zoomOverlay.classList.add('d-none');
+    zoomOverlay.classList.remove('d-flex');
 }
 
 function loadZoom(aktivImg){

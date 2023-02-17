@@ -15,6 +15,9 @@ body{
 .d-none{
     display: none;
 }
+.d-flex{
+    display: flex;
+}
 /*<<<<<<<< Content */
 header{
     height: calc(100px - 32px - 1px);
@@ -64,18 +67,31 @@ footer{
     height: 100vh;
     background-color: #202124e7;
     z-index: 5;
+    justify-content: center;
+    align-items: center;
 }
-.zoom-center{
-    height: 100%;
+.overlay a{
+    height: 80%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    cursor: pointer;
+}
+.zoom-arrow{
+    min-width: 32px;
+    max-width: 65px;
+    width: 100%;
+    padding: 0 16px 0 16px;
+}
+#zoom{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .zoom-img{
-    background-color: white;
+    object-fit: cover;
+    width: 100%;
     border-radius: 5px;
-    height: 80vh;
-    width: 80vh;
-    z-index: 15;
 }
