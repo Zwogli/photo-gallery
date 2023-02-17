@@ -73,41 +73,41 @@ function renderSectionTwo(splitImgs){
 }
 
 //<<<<<<<<<<< Slideshow
-function randomImgs(){
-    slideImgs.splice(slideImgs);
-    for (let pics = 0; pics < 5; pics++) {
-        let pic = pics;
+// function randomImgs(){
+//     slideImgs.splice(slideImgs);
+//     for (let pics = 0; pics < 5; pics++) {
+//         let pic = pics;
 
-        let i = allImgs.length;
-        let randomImg = Math.floor(Math.random() * i);
+//         let i = allImgs.length;
+//         let randomImg = Math.floor(Math.random() * i);
 
-        slideImgs.push(allImgs[randomImg]);
-        saveSlideshow();
-    }
-    generateRandomSlideshow();
-}
+//         slideImgs.push(allImgs[randomImg]);
+//         saveSlideshow();
+//     }
+//     generateRandomSlideshow();
+// }
 
-function saveSlideshow(){
-    let saveSlideshow = JSON.stringify(slideImgs);
+// function saveSlideshow(){
+//     let saveSlideshow = JSON.stringify(slideImgs);
 
-    localStorage.setItem('Slideshow', saveSlideshow);
-}
-function loadSlideshow(){
-    let saveSlideshow = localStorage.getItem('Slideshow');
+//     localStorage.setItem('Slideshow', saveSlideshow);
+// }
+// function loadSlideshow(){
+//     let saveSlideshow = localStorage.getItem('Slideshow');
 
-    if (saveSlideshow) {
-        slideImgs = JSON.parse(saveSlideshow); 
-    }
-}
+//     if (saveSlideshow) {
+//         slideImgs = JSON.parse(saveSlideshow); 
+//     }
+// }
 
-function generateRandomSlideshow(){
-    for (let i = 0; i < slideImgs.length; i++) {
-        let slideImg = slideImgs[i];
-        let slide = document.getElementById('slide');
+// function generateRandomSlideshow(){
+//     for (let i = 0; i < slideImgs.length; i++) {
+//         let slideImg = slideImgs[i];
+//         let slide = document.getElementById('slide');
         
-    slide.innerHTML += /*html*/`
-        <img class="slideshow-imgs" src="${slideImg}"> 
-    `;
-    }
-}
+//     slide.innerHTML += /*html*/`
+//         <img class="slideshow-imgs" src="${slideImg}"> 
+//     `;
+//     }
+// }
 
