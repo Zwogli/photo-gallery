@@ -55,7 +55,7 @@ function renderSectionOne(splitImgs){
         const firstPartImg = allImgs[i];
         
         document.getElementById('galleryOne').innerHTML += /*html*/`
-        <img onclick="openZoom()" class="img-card" src="${firstPartImg}">
+        <img onclick="openZoom(${i})" class="img-card" src="${firstPartImg}">
         `;
     }
 }
@@ -65,15 +65,23 @@ function renderSectionTwo(splitImgs){
         const secondPartImg = allImgs[i];
         
         document.getElementById('galleryTwo').innerHTML += /*html*/`
-        <img  class="img-card" src="${secondPartImg}">
+        <img onclick="openZoom(${i})" class="img-card" src="${secondPartImg}">
         `;
     }
 }
 
-function openZoom(){
+function openZoom(i){
+    let aktivImg = allImgs[i]
     document.getElementById('zoom-overlay').classList.remove('d-none');
+    loadZoom(aktivImg);
 }
 
 function closeZoom(){
     document.getElementById('zoom-overlay').classList.add('d-none');
+}
+
+function loadZoom(aktivImg){
+    document.getElementById('zoom').innerHTML = /*html*/`
+        <img class="zoom-img" src="${aktivImg}">
+    `;
 }
