@@ -18,6 +18,9 @@ body{
 .d-flex{
     display: flex;
 }
+.overflow{
+    overflow-y: hidden;
+}
 /*<<<<<<<< Content */
 header{
     height: calc(100px - 32px - 1px);

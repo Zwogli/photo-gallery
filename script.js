@@ -57,9 +57,9 @@ function renderSectionTwo(splitImgs){
 // Zoom & Carusell
 function openZoom(i){
     let zoomOverlay = document.getElementById('zoom-overlay');
-
     zoomOverlay.classList.remove('d-none');
     zoomOverlay.classList.add('d-flex');
+    document.getElementById('body').classList.add('overflow');
     aktivImg = i
     loadZoom();
 }
@@ -69,6 +69,7 @@ function closeZoom(){
 
     zoomOverlay.classList.add('d-none');
     zoomOverlay.classList.remove('d-flex');
+    document.getElementById('body').classList.remove('overflow');
 }
 
 function loadZoom(){
