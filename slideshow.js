@@ -3,8 +3,12 @@ let slideImgs = allImgs;
 let currentImg = 0;
 
 function renderSlideshow(){
-    shuffle(slideImgs).splice(0,5);
-        let slide = document.getElementById('slide');   
+    shuffle(slideImgs).splice(0,slideImgs.length - 5);
+    generateSlideshow();    
+}
+
+function generateSlideshow(){
+    let slide = document.getElementById('slide');   
     slide.innerHTML = /*html*/`
         <img class="slideshow-imgs" src="${slideImgs[currentImg]}">
         <a onclick="next(-1)" class="arrow-left" href="#">
@@ -28,7 +32,7 @@ function next(i){
     if(currentImg > slideImgs.length -1){
         currentImg = 0
     }
-    renderSlideshow();
+    generateSlideshow();
 }
 
 function shuffle(slideImgs) {
