@@ -21,7 +21,7 @@ let allImgs = [
 `img/IMG_20230120_135523.jpg`,
 `img/IMG_20230212_131531.jpg`
 ]
-var aktivImg;
+let aktivImg;
 
 function render(){
     splitArrayImgs();
@@ -60,7 +60,7 @@ function openZoom(i){
 
     zoomOverlay.classList.remove('d-none');
     zoomOverlay.classList.add('d-flex');
-    globalThis.aktivImg = i
+    aktivImg = i
     loadZoom();
 }
 
