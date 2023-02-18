@@ -78,18 +78,17 @@ function loadZoom(){
 }
 
 function zoomNext(nextImg){
-    let newImg = aktivImg + nextImg;
+    aktivImg = aktivImg + nextImg;
     
-    if(newImg < 0){
-        newImg = allImgs.length -1;
+    if(aktivImg < 0){
+        aktivImg = allImgs.length -1;
     }
-    if(newImg > allImgs.length -1){
-        newImg = 0
+    if(aktivImg > allImgs.length -1){
+        aktivImg = 0
     }
-    globalThis.aktivImg = newImg;
     
     document.getElementById('zoom').innerHTML = ``;
     document.getElementById('zoom').innerHTML = /*html*/`
-        <img class="zoom-img" src="${allImgs[newImg]}">
+        <img class="zoom-img" src="${allImgs[aktivImg]}">
     `;
 }
