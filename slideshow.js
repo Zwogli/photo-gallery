@@ -1,4 +1,5 @@
-let slideImgs = allImgs;
+// let slideImgs = allImgs;
+let slideImgs = Object.values(allImgs);
 let currentImg = 0;
 
 function renderSlideshow(){
