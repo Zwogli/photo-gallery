@@ -1,10 +1,10 @@
-// let slideImgs = [];
 let slideImgs = allImgs;
 let currentImg = 0;
 
 function renderSlideshow(){
     shuffle(slideImgs).splice(0,slideImgs.length - 5);
-    generateSlideshow();    
+    generateSlideshow();
+    // generateIndikator();    
 }
 
 function generateSlideshow(){
