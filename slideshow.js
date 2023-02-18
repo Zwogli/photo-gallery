@@ -1,40 +1,41 @@
-let slideImgs = [];
-loadSlideshow();
+// let slideImgs = [];
+let slideImgs = allImgs;
+let currentImg = 0;
 
-function randomImgs(){
-    slideImgs.splice(slideImgs);
-    for (let pics = 0; pics < 5; pics++) {
-        let pic = pics;
-
-        let i = allImgs.length;
-        let randomImg = Math.floor(Math.random() * i);
-
-        slideImgs.push(allImgs[randomImg]);
-        saveSlideshow();
-    }
-    generateRandomSlideshow();
-}
-
-function saveSlideshow(){
-    let saveSlideshow = JSON.stringify(slideImgs);
-
-    localStorage.setItem('Slideshow', saveSlideshow);
-}
-function loadSlideshow(){
-    let saveSlideshow = localStorage.getItem('Slideshow');
-
-    if (saveSlideshow) {
-        slideImgs = JSON.parse(saveSlideshow); 
-    }
-}
-
-function generateRandomSlideshow(){
-    for (let i = 0; i < slideImgs.length; i++) {
-        let slideImg = slideImgs[i];
-        let slide = document.getElementById('slide');
-        
-    slide.innerHTML += /*html*/`
-        <img class="slideshow-imgs" src="${slideImg}"> 
+function renderSlideshow(){
+    shuffle(slideImgs).splice(0,5);
+        let slide = document.getElementById('slide');   
+    slide.innerHTML = /*html*/`
+        <img class="slideshow-imgs" src="${slideImgs[currentImg]}">
+        <a onclick="next(-1)" class="arrow-left" href="#">
+            <div class="blur">
+                <img class="arrow" src="img/icon/arrow-left.png">
+            </div>
+        </a>
+        <a onclick="next(1)" class="arrow-right" href="#">
+            <div class="blur">
+                <img class="arrow" src="img/icon/arrow-right.png">
+            </div>
+        </a> 
     `;
-    }
 }
+
+function next(i){
+    currentImg = currentImg + i
+    if(currentImg < 0){
+        currentImg = slideImgs.length -1;
+    }
+    if(currentImg > slideImgs.length -1){
+        currentImg = 0
+    }
+    renderSlideshow();
+}
+
+function shuffle(slideImgs) {
+    for (let i = slideImgs.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slideImgs[i], slideImgs[j]] = [slideImgs[j], slideImgs[i]];
+    }
+    return slideImgs;
+}
+

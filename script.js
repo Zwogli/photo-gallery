@@ -42,7 +42,7 @@ var aktivImg;
 
 function render(){
     splitArrayImgs();
-    randomImgs();
+    renderSlideshow();
 }
 
 function splitArrayImgs(){
